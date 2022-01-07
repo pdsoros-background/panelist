@@ -268,13 +268,14 @@
 		var firstLineBase = 160;
 		var secondLineBase = 280;
 		var thirdLineBase = 380;
+		var fourthLineBase = 460;
 
 		// draw vertical line
 		ctx.fillStyle = '#f5d77a'; // NOW yellow //'#db7474'; // pd soros pink
 		var height = firstLineBase;
 		var verticalLineWidth = 20;
 		if ($last.value.length > 0) { height = secondLineBase; }
-		if ($pronouns.value.length > 0) { height = thirdLineBase; }
+		if ($pronouns.value.length > 0) { height = fourthLineBase; }
 		ctx.fillRect(leftMargin-40, topMargin, verticalLineWidth, height + 50);
 
 		if ($background.selectedIndex == 1) { // light background
@@ -290,11 +291,11 @@
 		ctx.fillText($last.value, leftMargin, secondLineBase, maxWidth);
 
 		ctx.font = "600 60px marian, sans-serif";
-		ctx.fillText($pronouns.value, leftMargin, thirdLineBase, maxWidth);
+		ctx.fillText($pronouns.value, leftMargin, fourthLineBase, maxWidth);
 		
 		// add "Panelist" text
-		ctx.font = "italic bolder 80px marian, sans-serif";
-		ctx.fillText("Panelist", w-ctx.measureText("Panelist").width-leftMargin, 80, maxWidth);
+		ctx.font = "italic bold 80px marian, sans-serif";
+		ctx.fillText("Panelist", leftMargin, thirdLineBase, maxWidth);
 
 		ctx.drawImage(img, w-img.width*scale-imgMargin, imgMargin, img.width*scale, img.height*scale);
 	}
