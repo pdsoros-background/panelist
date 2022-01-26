@@ -123,8 +123,8 @@
 
 	<a id="downloadlink" download="zoombackground.jpg" href="">Download Background</a>
 
-<img src="/static/light_text_logo.png" style="display:none;" id="light_logo">
-<img src="/static/dark_text_logo.png" style="display:none;" id="dark_logo">
+<img src="/static/black_text_logo.png" style="display:none;" id="light_logo">
+<img src="/static/black_text_logo.png" style="display:none;" id="dark_logo">
 </div>
 <script>
 	// adapted from https://www0.gsb.columbia.edu/zoom_background/
@@ -228,11 +228,11 @@
 		$background.selectedIndex = 1; // set this value to make the font dark
 	
 		if($background.selectedIndex == 1) { // light background
-			radialGrd.addColorStop(0, "#e6e6e6"); // light gray
-			radialGrd.addColorStop(1, "#8c8c8c"); // darker gray
+			radialGrd.addColorStop(0, "#e8c873"); // light gray
+			radialGrd.addColorStop(1, "#d4b76a"); // darker gray
 		} else {
-			radialGrd.addColorStop(0, "#e6e6e6"); // lighter gray
-			radialGrd.addColorStop(1, "#8c8c8c"); // gray
+			radialGrd.addColorStop(0, "#e8c873"); // lighter gray
+			radialGrd.addColorStop(1, "#d4b76a"); // gray
 		}
 
 		var img;
@@ -271,17 +271,17 @@
 		var fourthLineBase = 460;
 
 		// draw vertical line
-		ctx.fillStyle = '#f5d77a'; // NOW yellow //'#db7474'; // pd soros pink
-		var height = firstLineBase;
+		ctx.fillStyle = '#ec6b74'; // NOW yellow //'#db7474'; // pd soros pink
+		var height = thirdLineBase;
 		var verticalLineWidth = 20;
 		if ($last.value.length > 0) { height = thirdLineBase; }
 		if ($pronouns.value.length > 0) { height = fourthLineBase; }
 		ctx.fillRect(leftMargin-40, topMargin, verticalLineWidth, height + 50);
 
 		if ($background.selectedIndex == 1) { // light background
-			ctx.fillStyle = '#263443';
+			ctx.fillStyle = '#231f20ff';
 		} else {
-			ctx.fillStyle = '#f2f5f7';
+			ctx.fillStyle = '#231f20ff';
 		}
 
 		ctx.font = "800 150px marian, sans-serif";
