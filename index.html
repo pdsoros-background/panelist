@@ -95,7 +95,14 @@
 			<p><i>e.g. She/Her/Hers, He/Him/His, They/Them/Theirs</i></p>
 			<input type="text" id="pronouns" placeholder="Preferred Pronouns" tabindex="3" required>
 
-			<input type="hidden" id="background" name="background" value="Dark">	
+			<label>Background Color</label>
+			<div class="arrow-icon">
+				<select name="background" id="background">
+					<option selected value="Teal">Teal</option>
+					<option value="Gray">Gray</option>
+				</select>
+			<span class="arrow"><i class="down-arrow"></i></span>
+			</div>
 
 			<div id="ratioOptions">
 				<input type="radio" id="optionHD" name="imageStyle" value="HD" checked="checked">
@@ -225,14 +232,12 @@
 
 		var radialGrd = ctx.createRadialGradient(w/2, h*.9, 400, w/2, h*.9, h);
 	
-		$background.selectedIndex = 1; // set this value to make the font dark
-	
 		if($background.selectedIndex == 1) { // light background
-			radialGrd.addColorStop(0, "#e5e6e6"); // light gray
-			radialGrd.addColorStop(1, "#acadad"); // darker gray
+			radialGrd.addColorStop(0, "#d2ebea"); // lighter color
+			radialGrd.addColorStop(1, "#95d0ce"); // darker color
 		} else {
-			radialGrd.addColorStop(0, "#e5e6e6"); // lighter gray
-			radialGrd.addColorStop(1, "#acadad"); // gray
+			radialGrd.addColorStop(0, "#e5e6e6"); // lighter color
+			radialGrd.addColorStop(1, "#acadad"); // darker color
 		}
 
 		var img;
